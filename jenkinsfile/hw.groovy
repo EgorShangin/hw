@@ -16,6 +16,7 @@ pipeline {
                             sh "echo '${password}' | sudo -S docker container rm es"
                         } catch (Exception e) {
                             print 'container not exist, skip clean'
+                            currentBuild.result = 'FAILURE'
                         }
                     }
                 }
