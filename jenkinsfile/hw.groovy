@@ -61,6 +61,19 @@ pipeline {
                 }
             }
         }
+         stage ('Stop docker'){
+            steps{
+                script{
+                    withCredentials([
+                        usernamePassword(credentialsId: 'srv_sudo',
+                        usernameVariable: 'username',
+                        passwordVariable: 'password')
+                    ]) {
+                        sh "echo '${password}' | sudo -S docker stop es"                 
+                    }
+                }
+            }
+        }
         
     }
 
