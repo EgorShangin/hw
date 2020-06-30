@@ -28,7 +28,7 @@ pipeline {
                               extensions                       : [[$class           : 'RelativeTargetDirectory',
                                                                    relativeTargetDir: 'auto']],
                               submoduleCfg                     : [],
-                              userRemoteConfigs                : [[credentialsId: '	EgorShangin', url: 'https://github.com/EgorShangin/hw.git']]])
+                              userRemoteConfigs                : [[credentialsId: 'EgorShangin', url: 'https://github.com/EgorShangin/hw.git']]])
                 }
             }
         }
